@@ -4,35 +4,35 @@ variable "BucketArn" {
   default     = ""
 }
 
-variable "DeliveryStreamName" {
+variable "delivery_stream_name" {
   type        = string
   description = "(optional) describe your variable"
   default     = ""
 }
-variable "DomainArn" {
+variable "domain_arn" {
   type        = string
   description = "(optional) describe your variable"
   default     = ""
 }
-variable "IndexName" {
+variable "index_name" {
   type        = string
   description = "(optional) describe your variable"
   default     = ""
 }
-variable "SecurityGroup" {
-  type        = string
-  description = "(optional) describe your variable"
-  default     = ""
-}
-
-variable "StackName" {
+variable "security_group_ids" {
   type        = string
   description = "(optional) describe your variable"
   default     = ""
 }
 
+variable "stack_name" {
+  type        = string
+  description = "(optional) describe your variable"
+  default     = ""
+}
 
-variable "SubnetIds" {
+
+variable "subnet_ids" {
   type        = string
   description = "(optional) describe your variable"
   default     = ""

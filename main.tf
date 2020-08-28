@@ -1,16 +1,16 @@
 data "aws_caller_identity" "this" {}
 
 resource "aws_cloudformation_stack" "example" {
-  name         = var.StackName
+  name         = var.stack_name
   capabilities = ["CAPABILITY_IAM"]
   parameters = {
     AccountId          = data.aws_caller_identity.this.account_id
     BucketArn          = var.BucketArn
-    DeliveryStreamName = var.DeliveryStreamName
-    DomainArn          = var.DomainArn
-    IndexName          = var.IndexName
-    SecurityGroup      = var.SecurityGroup
-    SubnetIds          = var.SubnetIds
+    DeliveryStreamName = var.delivery_stream_name
+    DomainArn          = var.domain_arn
+    IndexName          = var.index_name
+    SecurityGroup      = var.security_group_ids
+    SubnetIds          = var.subnet_ids
 
   }
   template_body = <<STACK
