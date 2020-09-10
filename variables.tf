@@ -39,3 +39,10 @@ variable "subnet_ids" {
   description = "subnet ids"
   type        = list(string)
 }
+
+variable "lambda_arn" {
+  default = "arn:aws:lambda:us-west-2:944706592399:function:khalid-test-delete"
+  description = "Lambda funcation ARN"
+  type = string
+  
+}

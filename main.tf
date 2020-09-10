@@ -18,6 +18,7 @@ resource "aws_cloudformation_stack" "this" {
     IndexName          = var.index_name
     SecurityGroup      = var.security_group
     SubnetIds          = join(",", var.subnet_ids)
+    LambdaArn          = var.lambda_arn
   }
   template_body = <<STACK
 {
@@ -92,7 +93,23 @@ resource "aws_cloudformation_stack" "this" {
             "SubnetIds": {
               "Ref": "SubnetIds"
             }
+          },
+          "ProcessingConfiguration": {
+            "Enabled": "true",
+             "Processors": [
+               {
+                 "Parameters": [
+                   {
+                      "ParameterName": "LambdaArn",
+                      "ParameterValue": {"Ref":"LambdaArn}
+                   }
+                 ],
+                 "Type": "Lambda
+               }
+             ]
           }
+          
+
         }
       },
       "DependsOn": [
